@@ -39,4 +39,4 @@
 
 # Ignore credentials file and .env file
 /config/credentials.yml.enc
-/.env
+.env
