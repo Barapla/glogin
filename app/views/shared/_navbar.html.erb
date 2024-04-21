@@ -1,0 +1,20 @@
+<div data-controller="sidebar">
+  <nav class="flex justify-between items-center px-4">
+    <div class="flex items-center lg:hidden" data-action="click->sidebar#open">
+      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+      </svg>
+    </div>
+    <div class="flex-grow flex justify-center lg:justify-start w-full">
+      <%= link_to image_tag('Logo.png', alt: 'Logo'), root_path, class: "object-cover w-52" %>
+    </div>
+    <div class="w-6 h-6 lg:hidden"> <!-- Elemento invisible para equilibrar el espacio --> </div>
+  </nav>
+  <div data-sidebar-target="panel" class="flex flex-col justify-between sidebar-panel w-3/4 bg-gray-200 rounded-br-lg p-4">
+    <ul class="pl-5 text-gray-700">
+      <li><%= link_to "Home", root_path, class: "font-semibold hover:bg-gray-100 rounded-md px-3 py-2" %></li>
+      <li><%= link_to "Sign in", new_user_session_path, class: "font-semibold hover:bg-gray-100 rounded-md px-3 py-2" %></li>
+    </ul>
+    <%= link_to "Register now", new_user_registration_path, class: "btn btn-primary" %>
+  </div>
+</div>

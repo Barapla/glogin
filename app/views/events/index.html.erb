@@ -1,0 +1,27 @@
+<h1>Events#index</h1>
+<p>Find me in app/views/events/index.html.erb</p>
+
+<style>
+    table, td{
+      border: 1px solid black;
+    }
+  </style>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Summary</th>
+        <th>description</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @calendar_list.each do |calendar| %>
+        <tr>
+          <td><%= calendar.summary %></td>
+          <td><%= calendar.description %></td>
+          <td><%= calendar.location %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

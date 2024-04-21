@@ -1,0 +1,49 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ 
+/* Estilos para el panel lateral (modal) */
+
+@import "application.tailwind";
+
+.sidebar-panel {
+    position: fixed; /* o absolute, dependiendo de tu estructura */
+    left: 0;
+    top: 0;
+    height: 33.33%;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1050; /* Asegúrate de que esté sobre el overlay */
+  }
+  
+  .sidebar-panel.active {
+    transform: translateX(0);
+  }
+  
+  /* Estilo para cuando el modal está abierto */
+  .modal-open {
+    overflow: hidden;
+  }
+  
+  .modal-open .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Efecto de desvanecimiento */
+    z-index: 1040; /* Asegúrate de que el backdrop esté justo debajo del modal */
+  }
