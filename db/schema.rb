@@ -26,16 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_093733) do
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
-  create_table "tokens", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "access_token"
-    t.string "refresh_token"
-    t.integer "expires_at"
-    t.string "provider"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "picture_url"
